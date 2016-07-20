@@ -5,8 +5,6 @@ import com.homerbot.Methods;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
 
-import static com.homerbot.CommandHandler.getCommand;
-
 /**
  * Created by Jakebooy on 19/07/2016.
  */

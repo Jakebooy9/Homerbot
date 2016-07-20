@@ -21,9 +21,9 @@ public class Help extends AbstractCommand {
     @Override
     public void execute(Group group, User user, String[] args){
         if(args.length == 0) {
-            int total = CommandHandler.getCommands().size();
+            int total = getCommands().size();
             List<String> s = new ArrayList<>();
-            for (AbstractCommand c : CommandHandler.getCommands()) {
+            for (AbstractCommand c : getCommands()) {
                 if (c.isEnabled()) {
                     s.add(c.getName());
                 }
@@ -34,7 +34,7 @@ public class Help extends AbstractCommand {
         }else if(args[0].equalsIgnoreCase("disabled")){
             ArrayList<AbstractCommand> cmds = new ArrayList<>();
             List<String> s = new ArrayList<>();
-            for(AbstractCommand c : CommandHandler.getCommands()){
+            for(AbstractCommand c : getCommands()){
                 if(!c.isEnabled()){
                     cmds.add(c);
                     s.add(c.getName());

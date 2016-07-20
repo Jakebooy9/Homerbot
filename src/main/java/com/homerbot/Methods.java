@@ -5,19 +5,55 @@ import fr.delthas.skype.Pair;
 import fr.delthas.skype.Role;
 import fr.delthas.skype.User;
 
+import java.io.*;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-
-import static com.homerbot.CommandHandler.getCommands;
 
 /**
  * Created by Jakebooy on 19/07/2016.
  */
 public class Methods {
+
+    public static void createSkype(){
+        File file = new File("skype.txt");
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+            System.out.println("Fill in skype.txt with \"username:password\"");
+            return;
+        }
+    }
+
+    public static String getSkypeUsername(){
+        File file = new File("skype.txt");
+        String username = "";
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line = reader.readLine();
+            String[] split = line.split(":");
+            username = split[0];
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return username;
+    }
+
+    public static String getSkypePassword(){
+        File file = new File("skype.txt");
+        String password = "";
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line = reader.readLine();
+            String[] split = line.split(":");
+            password = split[1];
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return password;
+    }
 
 
     public static void mysqlConnect(String username, String password, String host, String port, String database){

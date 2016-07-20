@@ -30,7 +30,10 @@ public class Main extends CommandHandler{
         main.register(new EightBall("8ball"));
         main.register(new Stop("stop"));
 
-        skype = new Skype("nickhalden22", "8m4E]msnDPT&C<sY");
+        Methods.createSkype();
+
+        skype = new Skype(Methods.getSkypeUsername(), Methods.getSkypePassword());
+
         try{
             skype.connect();
             if(skype.isConnected()){
