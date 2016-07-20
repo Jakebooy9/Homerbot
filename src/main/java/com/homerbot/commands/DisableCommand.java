@@ -1,7 +1,7 @@
 package com.homerbot.commands;
 
 import com.homerbot.AbstractCommand;
-import com.homerbot.Methods;
+import com.homerbot.Homerbot;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
 
@@ -17,7 +17,7 @@ public class DisableCommand extends AbstractCommand{
 
     @Override
     public void execute(Group group, User user, String[] args){
-        if(Methods.isBotDev(user)){
+        if(isBotDev(user)){
             if(args.length == 0){
                 group.sendMessage("<b>" + user.getUsername() + " > </b>Usage: !disable [command]");
                 return;

@@ -1,8 +1,7 @@
 package com.homerbot.commands;
 
 import com.homerbot.AbstractCommand;
-import com.homerbot.Main;
-import com.homerbot.Methods;
+import com.homerbot.Homerbot;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
 
@@ -19,8 +18,8 @@ public class Stop extends AbstractCommand{
     public void execute(Group group, User user, String[] args){
         if(user.getUsername().equalsIgnoreCase("tfkjake")){
             group.sendMessage("Goodbye!");
-            Main.skype.disconnect();
-            Methods.mysqlDisconnect();
+            Homerbot.skype.disconnect();
+            mysqlDisconnect();
             System.exit(0);
         }else{
             group.sendMessage("<b>" + user.getUsername() + " > </b>Only the bot owner can run this command");
