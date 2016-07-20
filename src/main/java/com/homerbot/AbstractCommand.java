@@ -5,10 +5,9 @@ import fr.delthas.skype.Pair;
 import fr.delthas.skype.Role;
 import fr.delthas.skype.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
-public abstract class AbstractCommand extends CommandHandler {
+public abstract class AbstractCommand extends CommandHandler{
 
     private String name;
 

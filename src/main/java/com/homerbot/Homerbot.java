@@ -11,12 +11,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Jakebooy on 19/07/2016.
  */
 public class Homerbot extends CommandHandler{
+
+    public List<AbstractCommand> commands = new ArrayList<>();
 
     public Connection connection = null;
     Statement statement = null;

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CommandHandler {
 
-    private List<AbstractCommand> commands = new ArrayList<>();
+    private static List<AbstractCommand> commands = new ArrayList<>();
 
     public List<AbstractCommand> getCommands() {
         return commands;

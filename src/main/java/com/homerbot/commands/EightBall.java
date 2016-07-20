@@ -28,7 +28,7 @@ public class EightBall extends AbstractCommand {
         return;
     }
 
-    public static String get8ball(){
+    public String get8ball(){
         Random r = new Random();
         int x = r.nextInt(20-1) + 1;
         switch(x){

@@ -5,6 +5,8 @@ import com.homerbot.Homerbot;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
 
+import static com.homerbot.Homerbot.skype;
+
 /**
  * Created by Jakebooy on 20/07/2016.
  */
@@ -21,7 +23,7 @@ public class Stop extends AbstractCommand{
     public void execute(Group group, User user, String[] args){
         if(user.getUsername().equalsIgnoreCase("tfkjake")){
             group.sendMessage("Goodbye!");
-            Homerbot.skype.disconnect();
+            skype.disconnect();
             homerbot.mysqlDisconnect();
             System.exit(0);
         }else{

@@ -25,6 +25,7 @@ public class Help extends AbstractCommand {
     public void execute(Group group, User user, String[] args){
         if(args.length == 0) {
             int total = getCommands().size();
+            System.out.println("Commands: " + getCommands());
             List<String> s = new ArrayList<>();
             for (AbstractCommand c : getCommands()) {
                 if (c.isEnabled()) {
