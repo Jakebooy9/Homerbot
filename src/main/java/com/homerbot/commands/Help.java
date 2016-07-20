@@ -2,6 +2,7 @@ package com.homerbot.commands;
 
 import com.homerbot.AbstractCommand;
 import com.homerbot.CommandHandler;
+import com.homerbot.Homerbot;
 import com.sun.deploy.util.StringUtils;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
@@ -14,8 +15,10 @@ import java.util.List;
  */
 public class Help extends AbstractCommand {
 
-    public Help(String name){
-        super(name);
+    private Homerbot homerbot;
+    public Help(Homerbot homerbot){
+        super("help");
+        this.homerbot = homerbot;
     }
 
     @Override

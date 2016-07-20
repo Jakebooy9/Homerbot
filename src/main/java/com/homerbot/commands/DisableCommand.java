@@ -11,8 +11,10 @@ import fr.delthas.skype.User;
  */
 public class DisableCommand extends AbstractCommand{
 
-    public DisableCommand(String name){
-        super(name);
+    private Homerbot homerbot;
+    public DisableCommand(Homerbot homerbot){
+        super("disable");
+        this.homerbot = homerbot;
     }
 
     @Override

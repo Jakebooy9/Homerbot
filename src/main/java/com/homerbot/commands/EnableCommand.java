@@ -1,6 +1,7 @@
 package com.homerbot.commands;
 
 import com.homerbot.AbstractCommand;
+import com.homerbot.Homerbot;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
 
@@ -9,8 +10,10 @@ import fr.delthas.skype.User;
  */
 public class EnableCommand extends AbstractCommand {
 
-    public EnableCommand(String name){
-        super(name);
+    private Homerbot homerbot;
+    public EnableCommand(Homerbot homerbot){
+        super("enable");
+        this.homerbot = homerbot;
     }
 
     @Override

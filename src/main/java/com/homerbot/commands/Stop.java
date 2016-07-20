@@ -10,16 +10,19 @@ import fr.delthas.skype.User;
  */
 public class Stop extends AbstractCommand{
 
-    public Stop(String name){
-        super(name);
+    private Homerbot homerbot;
+    public Stop(Homerbot homerbot){
+        super("stop");
+        this.homerbot = homerbot;
     }
+
 
     @Override
     public void execute(Group group, User user, String[] args){
         if(user.getUsername().equalsIgnoreCase("tfkjake")){
             group.sendMessage("Goodbye!");
             Homerbot.skype.disconnect();
-            mysqlDisconnect();
+            homerbot.mysqlDisconnect();
             System.exit(0);
         }else{
             group.sendMessage("<b>" + user.getUsername() + " > </b>Only the bot owner can run this command");

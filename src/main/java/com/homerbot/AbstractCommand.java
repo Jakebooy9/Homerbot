@@ -52,14 +52,5 @@ public abstract class AbstractCommand extends CommandHandler {
         return false;
     }
 
-    public void mysqlDisconnect() {
-        try {
-            if (Homerbot.connection != null) {
-                Homerbot.connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

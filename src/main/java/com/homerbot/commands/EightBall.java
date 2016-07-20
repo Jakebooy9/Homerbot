@@ -1,6 +1,7 @@
 package com.homerbot.commands;
 
 import com.homerbot.AbstractCommand;
+import com.homerbot.Homerbot;
 import fr.delthas.skype.Group;
 import fr.delthas.skype.User;
 
@@ -11,8 +12,10 @@ import java.util.Random;
  */
 public class EightBall extends AbstractCommand {
 
-    public EightBall(String name){
-        super(name);
+    private Homerbot homerbot;
+    public EightBall(Homerbot homerbot){
+        super("8ball");
+        this.homerbot = homerbot;
     }
 
     @Override

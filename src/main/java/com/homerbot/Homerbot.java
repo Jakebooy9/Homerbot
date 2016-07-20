@@ -18,19 +18,20 @@ import java.util.List;
  */
 public class Homerbot extends CommandHandler{
 
-    public static Connection connection = null;
-    public static Statement statement = null;
+    public Connection connection = null;
+    Statement statement = null;
 
     public static Skype skype;
 
     public Homerbot(){
+
         mysqlConnect("root", "", "localhost", "3306", "homerbot");
 
-        register(new Help("help"));
-        register(new DisableCommand("disable"));
-        register(new EnableCommand("enable"));
-        register(new EightBall("8ball"));
-        register(new Stop("stop"));
+        register(new Help(this));
+        register(new DisableCommand(this));
+        register(new EnableCommand(this));
+        register(new EightBall(this));
+        register(new Stop(this));
 
         createSkype();
 
@@ -115,8 +116,18 @@ public class Homerbot extends CommandHandler{
 
     public void mysqlConnect(String username, String password, String host, String port, String database){
         try {
-            Homerbot.connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?user=" + username + "&password=" + password);
+            connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?user=" + username + "&password=" + password);
         }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void mysqlDisconnect() {
+        try {
+            if (connection != null) {
+                connection.close();
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
